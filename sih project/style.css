@@ -1,0 +1,319 @@
+
+* {
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --background-color: #f4f7fa;
+    --card-background: #ffffff;
+    --text-color: #333;
+    --light-text-color: #666;
+    --border-color: #e9ecef;
+    --header-height: 70px;
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+ /* hearder */
+.main-header {
+    background-color: var(--card-background);
+    height: var(--header-height);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    z-index: 1000;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    height: 100%;
+}
+
+.menu-button {
+    background: none;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: var(--text-color);
+}
+
+.greeting {
+    font-size: 1.1em;
+    font-weight: 500;
+}
+
+.profile-pic img {
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--border-color);
+}
+
+/* Side menu */
+.side-nav {
+    position: fixed;
+    top: 0;
+    left: -280px; /* Hidden by default */
+    width: 280px;
+    height: 100vh;
+    background-color: var(--card-background);
+    box-shadow: 4px 0 15px rgba(0,0,0,0.1);
+    z-index: 1001;
+    display: flex;
+    flex-direction: column;
+    transition: left 0.3s ease-in-out;
+}
+
+.side-nav.open {
+    left: 0; 
+}
+
+.nav-profile {
+    text-align: center;
+    padding: 30px 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.nav-profile img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.nav-profile h3 {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.nav-profile p {
+    margin: 5px 0 0;
+    color: var(--light-text-color);
+    font-size: 0.9em;
+}
+
+.nav-links {
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.nav-links h4 {
+    color: var(--secondary-color);
+    text-transform: uppercase;
+    font-size: 0.8em;
+    letter-spacing: 1px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.nav-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links li a {
+    display: block;
+    padding: 12px 0;
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+.nav-links li a:hover {
+    color: var(--primary-color);
+}
+
+.logout-button {
+    display: block;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    color: #dc3545;
+    font-weight: bold;
+    border-top: 1px solid var(--border-color);
+}
+
+ /* ooverlays */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* /Main  dashboard */
+.dashboard {
+    padding: calc(var(--header-height) + 20px) 20px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.scan-attendance-btn {
+    width: 100%;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 20px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: background-color 0.2s;
+}
+
+.scan-attendance-btn:hover {
+    background-color: #0056b3;
+}
+
+ /* card */
+.card {
+    background-color: var(--card-background);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.card h2 {
+    margin-top: 0;
+    font-size: 1.4em;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* Card 1 */
+.schedule-item {
+    padding-left: 15px;
+    margin-bottom: 15px;
+}
+
+.schedule-item.now { border-left: 4px solid #28a745; }
+.schedule-item.next { border-left: 4px solid #ffc107; }
+
+.time-label {
+    font-weight: bold;
+    font-size: 0.9em;
+    color: var(--light-text-color);
+    display: block;
+}
+
+.schedule-item p {
+    margin: 5px 0 0;
+    font-size: 1.1em;
+}
+
+/* Card 2 today taks */
+.task-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+}
+
+.task-list li {
+    display: flex;
+    align-items: center;
+    padding: 8px 0;
+}
+
+.task-list input[type="checkbox"] {
+    margin-right: 12px;
+    width: 20px;
+    height: 20px;
+}
+
+.task-list label {
+    flex-grow: 1;
+}
+
+.task-list input[type="checkbox"]:checked + label {
+    text-decoration: line-through;
+    color: var(--light-text-color);
+}
+
+.add-task-btn {
+    background: none;
+    border: 1px dashed var(--secondary-color);
+    color: var(--secondary-color);
+    border-radius: 8px;
+    padding: 10px 15px;
+    cursor: pointer;
+    width: 100%;
+    font-weight: 500;
+}
+
+/* Card 3:  Links */
+.quick-links-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 15px;
+}
+
+.quick-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    color: var(--primary-color);
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.quick-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.15);
+}
+
+.quick-link .material-icons-outlined {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+/* Card 4 announcements */
+.announcements-list {
+    list-style: none;
+    padding-left: 20px;
+    margin: 0;
+}
+
+.announcements-list li {
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.announcements-list li::before {
+    content: '•';
+    position: absolute;
+    left: -20px;
+    color: var(--primary-color);
+    font-weight: bold;
+}

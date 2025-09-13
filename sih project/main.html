@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="header-content">
+            <button id="menu-toggle" class="menu-button">☰</button>
+            <div class="greeting">Good Morning, Raj!</div>
+            <a href="#profile" class="profile-pic">
+                <img src="image1.jpg" alt="Raj's Profile Picture">
+            </a>
+        </div>
+    </header>
+
+    <nav id="side-nav" class="side-nav">
+        <div class="nav-profile">
+            <img src="image1.jpg" alt="Raj's Profile Picture">
+            <h3>Raj Kishor</h3>
+            <p>B.Tech, Batch 2024-2028</p>
+        </div>
+        <div class="nav-links">
+            <h4>Academics</h4>
+            <ul>
+                <li><a href="#attendance">Attendance History</a></li>
+                <li><a href="#certificates">Certificates & Seminars</a></li>
+                <li><a href="#content">Content Centre</a></li>
+                <li><a href="#Education">Education</a></li>
+                <li><a href="#exam">Exam schedule</a></li>
+            </ul>
+            <h4>General</h4>
+            <ul>
+                <li><a href="#personal">Personal Detail</a></li>
+                <li><a href="#leave">Apply for Leave</a></li>
+                <li><a href="#help">Help Centre</a></li>
+                <li><a href="#settings">Settings</a></li>
+                <li><a href="#language"> Langauage</a></li>
+              
+            </ul>
+        </div>
+        <a href="#logout" class="logout-button">Log Out</a>
+    </nav>
+
+    <div id="overlay" class="overlay"></div>
+
+    <main class="dashboard">
+        <button class="scan-attendance-btn">MARK TODAY'S  ATTENDANCE</button>
+
+        <div class="card">
+            <h2> Today's  class</h2>
+            <div class="schedule-item now">
+                <span class="time-label">NOW  (6:00 PM - 7:00 PM)</span>
+                <p>C++  Lecture</p>
+            </div>
+            <div class="schedule-item next">
+                <span class="time-label">NEXT (8:00 PM)</span>
+                <p>Lunch Time </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Today's Tasks </h2>
+            <ul class="task-list">
+                <li>
+                    <input type="checkbox" id="task1" name="task1">
+                    <label for="task1">Complete Physics Lab Report</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="task2" name="task2">
+                    <label for="task2">Read Chapter 4 of DSA</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="task3" name="task3" checked>
+                    <label for="task3">Pay semester fees</label>
+                </li>
+            </ul>
+            <button class="add-task-btn">+ Add Task</button>
+        </div>
+
+        <div class="card">
+
+            <h2>Quick Link </h2>
+            <div class="quick-links-grid">
+                <a href="#attendance" class="quick-link">
+                    <span class="material-icons-outlined">co_present</span>
+                    Attendance
+                </a>
+                 <a href="#extracurricular" class="quick-link">
+                    <span class="material-icons-outlined">celebration</span>
+                    Extracurriculam Activity
+               </a>
+                <a href="#fees" class="quick-link">
+                    <span class="material-icons-outlined">receipt_long</span>
+                    Fee Payment
+                </a>
+                <a href="#calendar" class="quick-link">
+                    <span class="material-icons-outlined">event</span>
+                    Academic Calendar
+                </a>
+                 <a href="#export" class="quick-link">
+                    <span class="material-icons-outlined">ios_share</span>
+                    Faculty members
+                    
+                </a>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Announcements </h2>
+            <ul class="announcements-list">
+                <li>A new government course on web development is comming soon.</li>
+                <li>The deadline for seminar registration is this Friday.</li>
+                <li>Registration is open for XYZ Hackathon.</li>
+            </ul>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
